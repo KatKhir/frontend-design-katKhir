@@ -1,12 +1,83 @@
 :root {
-    --color-heading: #0B0D19;
-    --color-body: #677386;
-    --color-bg-button: #3D7BFA;
-    --color-text-button: #FFF;
+  --color-heading: #0b0d19;
+  --color-body: #677386;
+  --color-bg-button: #3d7bfa;
+  --color-text-button: #fff;
 
-    /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-
 /* Begynd her... */
+body {
+  background-color: var(--color-body);
+}
+
+h1 {
+  color: var(--color-heading);
+}
+
+button {
+  border-radius: 25%;
+  background-color: var(--color-bg-button);
+  color: var(--color-text-button);
+  padding: 10px 10px 10px 10px;
+}
+
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.grid_1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.grid_1-1-1 img:first-child {
+  width: 100%;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.grid_1-1-1 img:nth-child(2) {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.grid_1-1-1 img:nth-child(3) {
+  width: 100%;
+  grid-column: 2/3;
+  grid-row: 2/4;
+}
+
+.grid_1-1-1 img:nth-child(4) {
+  width: 100%;
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.grid_1-1-1 img:nth-child(5) {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.grid_1-1-1 img:nth-child(6) {
+  width: 100%;
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.grid_1-1-1 img:nth-child(7) {
+  width: 100%;
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+img {
+  border-radius: 10%;
+}

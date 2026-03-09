@@ -1,16 +1,94 @@
 :root {
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /*Fluid type*/
+  --step--2: clamp(0.7813rem, 0.7429rem + 0.1615vw, 0.8681rem);
+  --step--1: clamp(0.9375rem, 0.8915rem + 0.1938vw, 1.0417rem);
+  --step-0: clamp(1.125rem, 1.0698rem + 0.2326vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2837rem + 0.2791vw, 1.5rem);
+  --step-2: clamp(1.62rem, 1.5405rem + 0.3349vw, 1.8rem);
+  --step-3: clamp(1.944rem, 1.8486rem + 0.4019vw, 2.16rem);
+  --step-4: clamp(2.3328rem, 2.2183rem + 0.4822vw, 2.592rem);
+  --step-5: clamp(2.7994rem, 2.6619rem + 0.5787vw, 3.1104rem);
+
+  /* LINE HEIGHT */
+  --leading-tight: 1.15;
+  --leading-heading: 1.25;
+  --leading-body: 1.6;
+
+  /* SPACING SCALE */
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5369rem + 0.1136vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8494rem + 0.1136vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6108rem + 0.3409vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.1477rem + 0.4545vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2216rem + 0.6818vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.2955rem + 0.9091vw, 5rem);
+  --space-3xl: clamp(6.75rem, 6.4432rem + 1.3636vw, 7.5rem);
 }
 
 body {
-    font-family: system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
+}
+
+article {
+  max-width: 75ch;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  > * + * {
+    margin-top: var(--flow-space, var(--space-2xs));
+  }
+
+  h2 {
+    --flow-space: var(--space-l);
+  }
+
+  h3 {
+    --flow-space: var(var(--space-m));
+  }
+
+  h4 {
+    --flow-space: var(--space-s);
+  }
+}
+
+article :is(h1, h2, h3, h4) {
+  color: var(--gray-900);
+}
+article :is(p) {
+  color: var(--gray-800);
+}
+
+h1 {
+  font-size: var(--step-5);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--step-3);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--step-2);
+  font-weight: 400;
+}
+
+h4 {
+  font-size: var(--step-1);
+  font-weight: 500;
+}
+
+p {
+  font-size: var(--step-0);
 }

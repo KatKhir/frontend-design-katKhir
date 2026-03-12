@@ -6,10 +6,12 @@ const { id, question, answer, linkBlock } = props;
 
 <details {id} {...exclusive ? { name: "faq" } : {}}>
   <summary>
+    <div class="summary-inner">
     <span>
       {question}
       <PlusIcon />
     </span>
+    </div>
   </summary>
   <div class="answer">
     {answer.map((a) => <p set:html={a} />)}
@@ -50,18 +52,31 @@ const { id, question, answer, linkBlock } = props;
         display: flex;
         gap: 1rem;
         justify-content: space-between;
-
+     
         svg {
           inline-size: auto;
           height: 1lh;
           flex-shrink: 0;
+       /**************************************************************************** */
+          transform: rotate(var(--r, 0));
+          transition: transform 0.3s ease;
+          /**************************************************************************** */
         }
       }
     }
-
+/**************************************************************************** */
+      &[open] {
+    --r: z 90deg;
+    }
+      [open] summary::after {
+    content: '–';
+    }  
+/**************************************************************************** */
     .answer {
       color: #595566;
-
+      grid-template-rows: 0fr;
+      overflow: hidden;
+    
       > * + * {
         margin-top: 1em;
       }
